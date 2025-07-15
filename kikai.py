@@ -2,6 +2,7 @@ import streamlit as st
 
 
 customer = '選択してください'
+new_customer = '選択してください'
 genre = '選択してください'
 number = ''
 time = 0
@@ -43,6 +44,12 @@ if name != '選択してください':
     customer = st.selectbox(
     'メーカー',
     ('選択してください','ジーテクト','城山','タチバナ','その他'))
+else:
+    pass
+
+# 新規メーカー
+if customer == 'その他':
+    new_customer = st.text_input('メーカー名を入力')
 else:
     pass
 
