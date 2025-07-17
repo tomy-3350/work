@@ -30,9 +30,6 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict(service_account_info,
 # gspreadを使ってGoogle Sheets APIに認証
 gc = gspread.authorize(creds)
 
-# シートを開く
-sheet = gc.open("python").sheet1
-
 ###################################
 customer = '選択してください'
 new_customer = '選択してください'
@@ -114,6 +111,9 @@ else:
 total1 = time
 if time != 0:
     st.text('合計' + str(total1) + '時間')
+
+# シートを開く
+sheet = gc.open("python").sheet1
 
 
 #==================
