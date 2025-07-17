@@ -75,5 +75,5 @@ if time != 0:
 submit_btn = st.button('送信')
 if submit_btn:
     st.text('お疲れ様でした！')
-    sheet.append_row([day,customer,new_customer,genre,number,time])
+    sheet.append_row([str(day),customer,new_customer,genre,number,time])
 
