@@ -2,7 +2,7 @@ import gspread
 import streamlit as st
 from oauth2client.service_account import ServiceAccountCredentials
 
-#  Streamlit SecretsからTOML形式で情報を取得
+# Streamlit SecretsからTOML形式で情報を取得
 google_cloud_secret = st.secrets["google_cloud"]
 
 # Secretsから必要な情報を構築
@@ -10,7 +10,7 @@ service_account_info = {
     "type": google_cloud_secret["type"],
     "project_id": google_cloud_secret["project_id"],
     "private_key_id": google_cloud_secret["private_key_id"],
-    "private_key": google_cloud_secret["private_key"],
+    "private_key": google_cloud_secret["private_key"],  # 改行が含まれる
     "client_email": google_cloud_secret["client_email"],
     "client_id": google_cloud_secret["client_id"],
     "auth_uri": google_cloud_secret["auth_uri"],
@@ -32,7 +32,6 @@ gc = gspread.authorize(creds)
 
 # シートを開く
 sheet = gc.open("python").sheet1
-
 
 ###################################
 customer = '選択してください'
