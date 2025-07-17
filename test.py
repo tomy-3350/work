@@ -40,6 +40,30 @@ genre = '選択してください'
 number = ''
 time = 0
 
+customer2 = '選択してください'
+new_customer2 = '選択してください'
+genre2 = '選択してください'
+number2 = ''
+time2 = 0
+
+customer3 = '選択してください'
+new_customer3 = '選択してください'
+genre3 = '選択してください'
+number3 = ''
+time3 = 0
+
+customer4 = '選択してください'
+new_customer4 = '選択してください'
+genre4 = '選択してください'
+number4 = ''
+time4 = 0
+
+customer5 = '選択してください'
+new_customer5 = '選択してください'
+genre5 = '選択してください'
+number5 = ''
+time5 = 0
+
 #######################################################
 # タイトル
 st.title('北青 機械課 作業日報')
@@ -99,6 +123,6 @@ if submit_btn:
     st.text('お疲れ様でした！')
 
 if submit_btn and new_customer == '選択してください':
-    sheet.append_row([str(day),customer,genre,number,time])
+    sheet.append_row([str(day)+name,customer,genre,number,time])
 elif submit_btn and new_customer != '選択してください':
-    sheet.append_row([str(day), new_customer, genre, number, time])
+    sheet.append_row([str(day)+name, new_customer, genre, number, time])
