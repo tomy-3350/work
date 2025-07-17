@@ -65,7 +65,7 @@ else:
     pass
 
 
-total1 = (time)
+total1 = time
 if time != 0:
     st.text('合計' + str(total1) + '時間')
 
@@ -75,5 +75,8 @@ if time != 0:
 submit_btn = st.button('送信')
 if submit_btn:
     st.text('お疲れ様でした！')
-    sheet.append_row([str(day),customer,new_customer,genre,number,time])
 
+if submit_btn and new_customer == '選択してください':
+    sheet.append_row([str(day),customer,genre,number,time])
+elif submit_btn and new_customer != '選択してください':
+    sheet.append_row([str(day), new_customer, genre, number, time])
