@@ -256,17 +256,17 @@ elif submit_btn and new_customer == '選択してください' and customer2 != 
 elif submit_btn and new_customer != '選択してください' and new_customer2 != '選択してください':
     sheet.append_row([str(day)+name,new_customer,genre,number,time,new_customer2,genre2,number2,time2])
 
-elif submit_btn and new_customer == '選択してください' and customer3 != '選択してください':
+elif submit_btn and new_customer == '選択してください' and customer2 != '選択してください'and customer3 != '選択してください':
     sheet.append_row([str(day)+name,customer,genre,number,time,customer2,genre2,number2,time2,customer3,genre3,number3,time3])
 elif submit_btn and new_customer != '選択してください' and new_customer2 != '選択してください' and customer3 != '選択してください':
     sheet.append_row([str(day)+name,new_customer,genre,number,time,new_customer2,genre2,number2,time2,customer3,genre3,number3,time3])
 
-elif submit_btn and new_customer == '選択してください' and customer4 != '選択してください':
+elif submit_btn and new_customer == '選択してください' and customer2 != '選択してください'and customer3 != '選択してください' and customer4 != '選択してください':
     sheet.append_row([str(day)+name,customer,genre,number,time,customer2,genre2,number2,time2,customer3,genre3,number3,time3,customer4,genre4,number4,time4])
-elif submit_btn and new_customer != '選択してください' and new_customer2 != '選択してください' and customer4 != '選択してください':
+elif submit_btn and new_customer != '選択してください' and new_customer2 != '選択してください' and customer3 != '選択してください' and customer4 != '選択してください':
     sheet.append_row([str(day)+name,new_customer,genre,number,time,new_customer2,genre2,number2,time2,customer3,genre3,number3,time3,customer4,genre4,number4,time4])
 
-elif submit_btn and new_customer == '選択してください' and customer5 != '選択してください':
+elif submit_btn and new_customer == '選択してください' and customer2 != '選択してください'and customer3 != '選択してください' and customer4 != '選択してください' and customer5 != '選択してください':
     sheet.append_row([str(day)+name,customer,genre,number,time,customer2,genre2,number2,time2,customer3,genre3,number3,time3,customer4,genre4,number4,time4,customer5,genre5,number5,time5])
-elif submit_btn and new_customer != '選択してください' and new_customer2 != '選択してください' and customer5 != '選択してください':
+elif submit_btn and new_customer != '選択してください' and new_customer2 != '選択してください'and customer3 != '選択してください' and customer4 != '選択してください'  and customer5 != '選択してください':
     sheet.append_row([str(day)+name,new_customer,genre,number,time,new_customer2,genre2,number2,time2,customer3,genre3,number3,time3,customer4,genre4,number4,time4,customer5,genre5,number5,time5])
