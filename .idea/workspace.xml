@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac3320cb-6202-45fe-990c-ca7125be3919" name="変更" comment="ver_test">
+    <list default="true" id="ac3320cb-6202-45fe-990c-ca7125be3919" name="変更" comment="ver_true">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,17 +42,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.kikai.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.kikai.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/work&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -140,7 +141,55 @@
       <option name="project" value="LOCAL" />
       <updated>1752740759374</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ver_test">
+      <option name="closed" value="true" />
+      <created>1752744010708</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1752744010708</updated>
+    </task>
+    <task id="LOCAL-00011" summary="ver_test">
+      <option name="closed" value="true" />
+      <created>1752745441223</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1752745441223</updated>
+    </task>
+    <task id="LOCAL-00012" summary="ver_true">
+      <option name="closed" value="true" />
+      <created>1752751384566</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1752751384566</updated>
+    </task>
+    <task id="LOCAL-00013" summary="ver_gpt">
+      <option name="closed" value="true" />
+      <created>1752752303857</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1752752303857</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ver_true">
+      <option name="closed" value="true" />
+      <created>1752752527935</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1752752527935</updated>
+    </task>
+    <task id="LOCAL-00015" summary="ver_true">
+      <option name="closed" value="true" />
+      <created>1752753120168</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1752753120168</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +206,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ver3" />
     <MESSAGE value="ver_test" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver_test" />
+    <MESSAGE value="ver_gpt" />
+    <MESSAGE value="ver_true" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver_true" />
   </component>
 </project>

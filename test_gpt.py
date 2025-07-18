@@ -2,7 +2,7 @@ import gspread
 import streamlit as st
 from oauth2client.service_account import ServiceAccountCredentials
 
-# Streamlit SecretsからTOML形式で情報を取得
+#  Streamlit SecretsからTOML形式で情報を取得
 google_cloud_secret = st.secrets["google_cloud"]
 
 # Secretsから必要な情報を構築
@@ -36,48 +36,59 @@ st.caption("メーカー名、工番、作業内容、時間を入力してく�
 day = st.date_input("日付を選択してください")
 
 # 名前
-name = st.selectbox('名前', ('選択してください', '大地', '山岸', '坂本', '一條', '松本', '将', '出繩'))
+name = st.selectbox(
+    '名前',
+    ('選択してください', '大地', '山岸', '坂本', '一條', '松本', '将', '出繩'))
 
 
-# メーカー選択用の関数
-def create_task_section(task_num):
-    customer = st.selectbox(f'メーカー{task_num}',
-                            ['選択してください', 'ジーテクト', 'ヨロズ', '城山', 'タチバナ', '浜岳', '三池', '東プレ',
-                             '千代田', '武部', 'インフェック', 'その他'])
-    new_customer = st.text_input(f'メーカー名を入力{task_num}', disabled=(customer != 'その他'))
-    genre = st.selectbox(f'作業内容{task_num}',
-                         ['選択してください', '新規', '改修', 'その他']) if customer != '選択してください' else None
-    number = st.text_input(f'工番を入力{task_num}', disabled=(genre is None))
-    time = st.number_input(f'時間を入力{task_num}', min_value=0) if number else None
+# メーカーとその他関連入力フィールドを作成する
+def create_input_fields(index):
+    customer = st.selectbox(
+        f'メーカー{index}',
+        ('選択してください', 'ジーテクト', 'ヨロズ', '城山', 'タチバナ', '浜岳', '三池', '東プレ', '千代田', '武部',
+         'インフェック', 'その他')
+    )
+
+    new_customer = ''
+    if customer == 'その他':
+        new_customer = st.text_input(f'メーカー名を入力{index}')
+
+    genre = st.selectbox(f'作業内容{index}', ('選択してください', '新規', '改修',
+                                              'その他')) if customer != '選択してください' else '選択してください'
+    number = st.text_input(f'工番を入力{index}') if genre != '選択してください' else ''
+    time = st.number_input(f'時間を入力{index}', min_value=0) if number != '' else 0
+
     return customer, new_customer, genre, number, time
 
 
-# 各メーカーセクションの生成
-tasks = []
+# 各メーカーの入力フィールドを表示
+inputs = []
 for i in range(1, 6):
-    task = create_task_section(i)
-    tasks.append(task)
+    customer, new_customer, genre, number, time = create_input_fields(i)
+    inputs.append((customer, new_customer, genre, number, time))
 
-# 合計時間の計算
-total_time = sum([task[4] for task in tasks if task[4] is not None])
-if total_time > 0:
-    st.text(f'合計: {total_time}時間')
+# 合計時間
+total_time = sum([time for _, _, _, _, time in inputs])
 
-# Google Sheetsにデータを送信
+# 合計時間を表示
+if total_time != 0:
+    st.text(f'合計: {total_time} 時間')
+
+# シートを開く
+sheet = gc.open("python").sheet1
+
+# 送信ボタン
 submit_btn = st.button('送信')
+
 if submit_btn:
     st.text('お疲れ様でした！')
 
-    # データ送信のために行を作成
-    row_data = [str(day) + name]  # 日付と名前を最初に追加
+    # 入力内容を一つのリストにまとめる
+    row_data = [str(day) + name]
 
-    for task in tasks:
-        customer, new_customer, genre, number, time = task
+    for customer, new_customer, genre, number, time in inputs:
         if customer != '選択してください':
-            row_data.extend([new_customer if new_customer else customer, genre, number, time])
-        else:
-            row_data.extend(['', '', '', ''])
+            row_data.extend([new_customer if customer == 'その他' else customer, genre, number, time])
 
-    # シートにデータを追加
-    sheet = gc.open("python").sheet1
+    # 送信
     sheet.append_row(row_data)
