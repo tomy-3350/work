@@ -56,7 +56,8 @@ def create_input_fields(index):
     genre = st.selectbox(f'作業内容{index}', ('選択してください', '新規', '改修',
                                               'その他')) if customer != '選択してください' else '選択してください'
     number = st.text_input(f'工番を入力{index}') if genre != '選択してください' else ''
-    time = st.number_input(f'時間を入力{index}', min_value=0) if number != '' else 0
+    # 時間入力を小数点形式で設定
+    time = st.number_input(f'時間を入力{index}', min_value=0.0, step=0.25, format="%.2f") if number != '' else 0.0
 
     return customer, new_customer, genre, number, time
 
@@ -72,7 +73,7 @@ total_time = sum([time for _, _, _, _, time in inputs])
 
 # 合計時間を表示
 if total_time != 0:
-    st.text(f'合計: {total_time} 時間')
+    st.text(f'合計: {total_time:.2f} 時間')
 
 # シートを開く
 sheet = gc.open("python").sheet1
