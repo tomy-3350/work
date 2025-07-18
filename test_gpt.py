@@ -22,10 +22,10 @@ service_account_info = {
 
 # サービスアカウント認証情報を`ServiceAccountCredentials`に渡す
 creds = ServiceAccountCredentials.from_json_keyfile_dict(service_account_info,
-                                                         ["https://spreadsheets.google.com/feeds",
-                                                          "https://www.googleapis.com/auth/spreadsheets",
-                                                          "https://www.googleapis.com/auth/drive.file",
-                                                          "https://www.googleapis.com/auth/drive"])
+    ["https://spreadsheets.google.com/feeds",
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"])
 
 # gspreadを使ってGoogle Sheets APIに認証
 gc = gspread.authorize(creds)
